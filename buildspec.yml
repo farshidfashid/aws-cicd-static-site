@@ -1,7 +1,15 @@
 version: 0.2
 
 phases:
+  install:
+    commands:
+      - echo "No dependencies to install"
+
   build:
     commands:
-      - echo "Deploying files to S3"
-      - aws s3 sync . s3://aws-cicd-static-yourname --exclude ".git/*" --exclude "buildspec.yml"
+      - echo "Build phase: nothing to compile for static HTML/JS"
+
+artifacts:
+  files:
+    - '**/*'
+  base-directory: '.'
